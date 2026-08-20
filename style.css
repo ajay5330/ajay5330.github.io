@@ -45,36 +45,43 @@ header .site-logo,
   animation-play-state: paused;
 }
 /* =========================
-   INFINITE MARQUEE
+   MARQUEE
    ========================= */
 
 .marquee {
   overflow: hidden;
-  white-space: nowrap;
   width: 100%;
+  white-space: nowrap;
 }
 
-.marquee .marquee-track {
+.marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 20s linear infinite !important;
+  animation: marquee-scroll 24s linear infinite;
   will-change: transform;
 }
 
-.marquee .marquee-group {
+.marquee-group {
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
 
-.marquee .marquee-group span {
-  display: inline-block;
-  margin-right: 32px;
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 28px;
 }
 
-.marquee .marquee-group span:nth-child(even) {
+.marquee-separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #d9ff49;
-  margin-right: 32px;
+  font-size: 14px;
+  margin: 0 4px;
 }
 
 @keyframes marquee-scroll {
@@ -88,5 +95,5 @@ header .site-logo,
 }
 
 .marquee:hover .marquee-track {
-  animation-play-state: paused !important;
+  animation-play-state: paused;
 }
