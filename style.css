@@ -10,8 +10,8 @@
 @media(max-width:500px){.container{width:min(100% - 28px,1160px)}.hero h1{font-size:46px}.trust-row{gap:20px}.trust-row span{font-size:10px}.steps{grid-template-columns:1fr}.floating-card{transform:scale(.9)}.fc-one{left:10px}.fc-two{right:10px}.project-info{display:block}.project-info>span{display:block;margin-top:8px}.footer{display:block}.footer span{display:block;margin:4px 0}}
 /* Website logo */
 .site-logo {
-  width: 180px;
-  height: 58px;
+  width: 220px;
+  height: 78px;
   object-fit: contain;
   object-position: center;
   display: block;
