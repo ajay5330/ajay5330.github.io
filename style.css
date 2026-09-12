@@ -225,3 +225,74 @@ header .site-logo,
     font-size: 24px;
   }
 }
+/* ==============================
+   PROJECT IMAGE LIGHTBOX
+   ============================== */
+
+#image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#image-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#image-lightbox .lightbox-content {
+  position: relative;
+  width: min(1100px, 95vw);
+  max-height: 92vh;
+  overflow: auto;
+  transform: scale(0.88);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.35s ease;
+  border-radius: 8px;
+}
+
+#image-lightbox.active .lightbox-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#image-lightbox img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+#image-lightbox .lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 10000;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #111111;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#image-lightbox .lightbox-close:hover {
+  transform: rotate(90deg);
+}
+
+/* Make project images clickable */
+#work .actual-project img {
+  cursor: zoom-in;
+}
