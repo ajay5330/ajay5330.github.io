@@ -225,74 +225,75 @@ header .site-logo,
     font-size: 24px;
   }
 }
-/* ==============================
-   PROJECT IMAGE LIGHTBOX
-   ============================== */
+/* PROJECT IMAGE LIGHTBOX */
 
-#image-lightbox {
+#projectLightbox {
   position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.88);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 99999;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+
   opacity: 0;
   visibility: hidden;
+
   transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
-#image-lightbox.active {
+#projectLightbox.show {
   opacity: 1;
   visibility: visible;
 }
 
-#image-lightbox .lightbox-content {
-  position: relative;
-  width: min(1100px, 95vw);
-  max-height: 92vh;
-  overflow: auto;
-  transform: scale(0.88);
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.35s ease;
-  border-radius: 8px;
-}
-
-#image-lightbox.active .lightbox-content {
-  transform: scale(1);
-  opacity: 1;
-}
-
-#image-lightbox img {
-  display: block;
-  width: 100%;
+#lightboxImage {
+  max-width: 92%;
+  max-height: 92%;
+  width: auto;
   height: auto;
-  border-radius: 6px;
+
+  object-fit: contain;
+
+  transform: scale(0.85);
+  transition: transform 0.4s ease;
+
+  cursor: default;
 }
 
-#image-lightbox .lightbox-close {
+#projectLightbox.show #lightboxImage {
+  transform: scale(1);
+}
+
+#closeLightbox {
   position: fixed;
   top: 20px;
   right: 25px;
-  z-index: 10000;
-  width: 42px;
-  height: 42px;
+
+  width: 45px;
+  height: 45px;
+
   border: none;
   border-radius: 50%;
-  background: #ffffff;
-  color: #111111;
-  font-size: 28px;
+
+  background: white;
+  color: #111;
+
+  font-size: 30px;
   line-height: 1;
+
   cursor: pointer;
-  transition: transform 0.2s ease;
+  z-index: 100000;
 }
 
-#image-lightbox .lightbox-close:hover {
+#closeLightbox:hover {
   transform: rotate(90deg);
 }
 
-/* Make project images clickable */
 #work .actual-project img {
   cursor: zoom-in;
 }
