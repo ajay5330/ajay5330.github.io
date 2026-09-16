@@ -317,13 +317,18 @@ header .site-logo,
   overflow: hidden;
   border-radius: 12px;
   background: #e9e9e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .graphic-visual img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   cursor: zoom-in;
   transition: transform 0.45s ease;
 }
