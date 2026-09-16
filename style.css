@@ -297,3 +297,92 @@ header .site-logo,
 #work .actual-project img {
   cursor: zoom-in;
 }
+/* ==============================
+   GRAPHIC DESIGN
+   ============================== */
+
+.graphic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 65px 28px;
+}
+
+.graphic-item {
+  min-width: 0;
+}
+
+.graphic-visual {
+  width: 100%;
+  height: 430px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #e9e9e5;
+}
+
+.graphic-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.45s ease;
+}
+
+.graphic-item:hover .graphic-visual img {
+  transform: scale(1.03);
+}
+
+.graphic-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.graphic-info p {
+  margin: 0 0 7px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.graphic-info h3 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.graphic-info > span {
+  flex-shrink: 0;
+  padding-top: 3px;
+  font-size: 11px;
+  color: #666;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+
+  .graphic-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .graphic-visual {
+    height: 400px;
+  }
+
+  .graphic-info {
+    display: block;
+  }
+
+  .graphic-info > span {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .graphic-info h3 {
+    font-size: 23px;
+  }
+}
